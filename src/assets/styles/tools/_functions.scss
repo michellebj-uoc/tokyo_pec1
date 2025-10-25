@@ -3,7 +3,4 @@
   @return ($px / $base) * 1rem;
 }
 
-// color con opacidad (para overlays/hover)
-@function alpha($color, $opacity) {
-  @return rgba($color, $opacity);
-}
+
