@@ -1,20 +1,27 @@
-/**
- * Use this file to import partials.
- * Do not include SCSS code in this file.
- */
-
- /**
- * Import dependencies
- */
+// 1) Dependencias externas 
 @use "dependencies";
 
-/**
- * Import layouts
- * It's a best practice to use a different partial for each page
- */
+// 2) Settings & Tools 
+@use "1-settings/variables" as *;
+@use "2-tools/functions" as *;
+@use "2-tools/mixins" as *;
 
- @use "layouts/home";
+// 3) Generic & Elements
+@use "3-generic/generic";
+@use "4-elements/elements";
 
-/**
- * Do NOT include anything else in this file!
- */
+// 4) Layouts
+@use "layouts/home";
+
+// 5) Components
+@use "6-components/hero";
+@use "6-components/intro";
+@use "6-components/highlights";
+@use "6-components/food";
+@use "6-components/itinerary";
+@use "6-components/tips";
+@use "6-components/links";
+@use "6-components/cta";
+
+// 6) Utilities
+@use "7-utilities/utilities";
