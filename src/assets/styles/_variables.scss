@@ -1,37 +1,30 @@
 @use "sass:color";
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol";
-$font-family-serif: "Georgia", "Times New Roman", serif;
-$font-size-base: 16px;
-$space-4: 16px;
-$color-accent: #e63946;
-
-
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
-
 $mqMinWidth: 420px;
 
 // Colores
 $color-bg: #0f0f10;
 $color-fg: #ffffff;
 $color-accent: #e63946;
+$color-accent-2: #25b0ff;
 $color-muted: #9aa0a6;
 
 // Tipografía
-$font-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji","Segoe UI Emoji";
 $font-size-base: 16px;
 $line-height-base: 1.6;
 
 // Espaciados
+$space-1: 4px;
 $space-2: 8px;
+$space-3: 12px; 
 $space-4: 16px;
+$space-5: 20px; 
 $space-6: 24px;
 $space-8: 32px;
+$space-10: 40px; 
 $space-12: 48px;
+$space-16: 64px;
 
 // Breakpoints (mobile-first)
 $bp-sm: 576px;
