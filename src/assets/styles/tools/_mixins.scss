@@ -4,7 +4,7 @@
 }
 
 // Contenedor centrado
-@mixin container($max: 1100px, $pad: $space-4) {
+@mixin container($max: 1100px, $pad: 16px) {
   width: 100%;
   max-width: $max;
   margin-inline: auto;

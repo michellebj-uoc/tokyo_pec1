@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "../tools/mixins" as *;
+
 .cta {
   @include container();
   text-align: center;
