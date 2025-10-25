@@ -1,0 +1,23 @@
+// Media query min-width (mobile-first)
+@mixin mq($min) {
+  @media (min-width: $min) { @content; }
+}
+
+// Contenedor centrado
+@mixin container($max: 1100px, $pad: $space-4) {
+  width: 100%;
+  max-width: $max;
+  margin-inline: auto;
+  padding-inline: $pad;
+}
+
+// Botón primario
+@mixin button-primary {
+  display: inline-block;
+  padding: rem(12) rem(16);
+  background: $color-accent;
+  color: $color-fg;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
