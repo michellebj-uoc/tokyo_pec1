@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "../tools/functions" as *;
+
 // Media query min-width (mobile-first)
 @mixin mq($min) {
   @media (min-width: $min) { @content; }
@@ -14,7 +17,7 @@
 // Botón primario
 @mixin button-primary {
   display: inline-block;
-  padding: rem(12) rem(16);
+  padding: px-to-rem(12px) px-to-rem(16px);
   background: $color-accent;
   color: $color-fg;
   border-radius: 999px;

@@ -1,5 +1,6 @@
 @use "../variables" as *;
 @use "../tools/mixins" as *;
+@use "../tools/functions" as *; 
 
 .highlights {
   @include container();
@@ -27,7 +28,7 @@
   padding: $space-6;
 
   &__title {
-    font-size: rem(18);
+    font-size: px-to-rem(18px);
     margin-bottom: $space-2;
   }
 
