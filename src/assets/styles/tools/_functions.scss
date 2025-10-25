@@ -1,0 +1,9 @@
+// px → rem según $font-size-base
+@function rem($px, $base: $font-size-base) {
+  @return ($px / $base) * 1rem;
+}
+
+// color con opacidad (para overlays/hover)
+@function alpha($color, $opacity) {
+  @return rgba($color, $opacity);
+}
