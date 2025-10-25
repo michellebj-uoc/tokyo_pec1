@@ -6,8 +6,8 @@
   @media (min-width: $min) { @content; }
 }
 
-// Contenedor centrado
-@mixin container($max: 1100px, $pad: 16px) {
+// Contenedor centrado y con padding lateral
+@mixin container($max: 1100px, $pad: $space-4) {
   width: 100%;
   max-width: $max;
   margin-inline: auto;
@@ -15,12 +15,35 @@
 }
 
 // Botón primario
-@mixin button-primary {
+@mixin button-primary($bg: $color-accent, $fg: $color-fg) {
   display: inline-block;
   padding: px-to-rem(12px) px-to-rem(16px);
-  background: $color-accent;
-  color: $color-fg;
+  background: $bg;
+  color: $fg;
+  border: none;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+
+  &:active {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+}
+
+//Accesibilidad
+@mixin visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
