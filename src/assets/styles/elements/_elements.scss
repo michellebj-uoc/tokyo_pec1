@@ -1,0 +1,9 @@
+@use "../variables" as *;
+
+a {
+  color: $color-accent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+
+  &:hover { opacity: .9; }
+}
