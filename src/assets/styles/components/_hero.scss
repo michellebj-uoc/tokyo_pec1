@@ -1,0 +1,31 @@
+@use "../variables" as *;
+@use "../tools/mixins" as *;
+@use "../tools/functions" as *;
+
+.hero {
+  background:
+    radial-gradient(900px 380px at 85% -10%, rgba(230,0,44,0.06), transparent 60%),
+    radial-gradient(700px 300px at 10% -10%, rgba(31,78,121,0.05), transparent 60%),
+    $color-surface;
+
+  &__inner {
+    @include container();
+    padding-top: $space-16;
+    padding-bottom: $space-16;
+  }
+
+  &__title {
+    color: $color-fg;
+  }
+
+  &__subtitle {
+    color: $color-muted;
+  }
+
+  &__cta {
+    @include button-primary($color-accent, #fff);
+    box-shadow: 0 8px 24px rgba(230,0,44,0.18);
+
+    &:hover { box-shadow: 0 10px 30px rgba(230,0,44,0.26); }
+  }
+}

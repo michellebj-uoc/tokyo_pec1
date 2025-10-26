@@ -1,0 +1,58 @@
+@use "../variables" as *;
+@use "../tools/mixins" as *;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  background: $color-bg; 
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom: 1px solid $color-border;
+
+  &__nav {
+    @include container(1100px, $space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    gap: $space-4;
+  }
+
+  &__brand {
+    font-family: $font-base;
+    font-weight: 800;
+    letter-spacing: .3px;
+    color: $color-fg;
+    font-size: 1rem;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: $color-fg;
+      text-decoration: none;
+      font-weight: 600;
+      padding: $space-2 $space-3;
+      border-radius: 8px;
+      transition: color .2s ease, background .2s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-accent;
+        background: #fff0f2;
+        outline: none;
+      }
+    }
+  }
+
+  @include mq($bp-sm) {
+    &__menu { gap: $space-6; }
+  }
+}
