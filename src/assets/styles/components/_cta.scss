@@ -11,6 +11,7 @@
 
   &__button {
     @include button-primary;
+    color: $color-surface;
     &:hover { filter: brightness(1.05); }
   }
 }
