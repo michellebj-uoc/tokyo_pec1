@@ -3,15 +3,25 @@
 @use "../tools/functions" as *;
 
 .hero {
-  background:
-    radial-gradient(900px 380px at 85% -10%, rgba(230,0,44,0.06), transparent 60%),
-    radial-gradient(700px 300px at 10% -10%, rgba(31,78,121,0.05), transparent 60%),
-    $color-surface;
+  position: relative;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,0.18), rgba(255,255,255,0.66)), 
+    url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 
   &__inner {
     @include container();
     padding-top: $space-16;
     padding-bottom: $space-16;
+
+     @include mq($bp-md) {
+      padding-top: calc($space-16 + 24px);
+      padding-bottom: calc($space-16 + 24px);
+  }
   }
 
   &__title {
@@ -19,7 +29,7 @@
   }
 
   &__subtitle {
-    color: $color-muted;
+    color: $color-surface;
   }
 
   &__cta {
