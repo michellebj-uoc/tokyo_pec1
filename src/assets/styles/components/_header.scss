@@ -2,7 +2,6 @@
 @use "../tools/mixins" as *;
 
 .site-header {
-  position: sticky;
   top: 0;
   z-index: $z-header;
   background: $color-bg; 
@@ -25,6 +24,11 @@
     letter-spacing: .3px;
     color: $color-fg;
     font-size: 1rem;
+    
+    i {
+      font-size: 1.5rem;
+      color: $color-accent; 
+    }
   }
 
   &__menu {

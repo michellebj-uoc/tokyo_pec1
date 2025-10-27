@@ -3,11 +3,25 @@
 @use "../tools/functions" as *; 
 
 .cta {
-  @include container();
+  @include full-bleed;
+  position: relative;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(0deg, rgba(35, 34, 34, 0.48), rgba(78, 78, 78, 0.48)), 
+    url("../images/cta.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
   text-align: center;
   padding-block: $space-12;
 
-  &__title { font-size: px-to-rem(22px); padding-bottom: 0; margin-bottom: $space-4; }
+  &__title { color: $color-surface; font-size: px-to-rem(22px); padding-bottom: 0; margin-bottom: $space-4; }
+
+  &__text {
+    color: $color-surface;
+  }
 
   &__button {
     @include button-primary;
