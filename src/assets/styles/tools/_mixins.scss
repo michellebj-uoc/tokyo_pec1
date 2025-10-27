@@ -38,6 +38,16 @@
   }
 }
 
+// Sección a ancho total
+@mixin full-bleed {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
 //Accesibilidad
 @mixin visually-hidden {
   position: absolute !important;

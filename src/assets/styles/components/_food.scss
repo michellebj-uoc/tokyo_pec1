@@ -5,7 +5,11 @@
   @include container();
   padding-block: $space-12;
 
-  &__title { margin: 0 0 $space-6; color: $color-fg; }
+  &__title { 
+    margin: 0 0 $space-6; 
+    color: $color-fg; 
+    text-align: center; 
+  }
 
   &__list {
     display: grid;

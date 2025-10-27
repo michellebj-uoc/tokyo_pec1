@@ -7,7 +7,7 @@
   text-align: center;
   padding-block: $space-12;
 
-  &__title { font-size: px-to-rem(22px); margin-bottom: $space-4; }
+  &__title { font-size: px-to-rem(22px); padding-bottom: 0; margin-bottom: $space-4; }
 
   &__button {
     @include button-primary;
