@@ -1,0 +1,28 @@
+@use "../variables" as *;
+@use "../tools/mixins" as *;
+
+.intro {
+@include full-bleed;
+  background: $color-surface;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    @include container();
+    padding-block: $space-12;
+    max-width: 80ch;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0 0 $space-4;
+    color: $color-fg;
+  }
+
+  &__text {
+    margin: 0 0 $space-4;
+    color: $color-fg;
+
+    &:last-child { margin-bottom: 0; }
+  }
+}
