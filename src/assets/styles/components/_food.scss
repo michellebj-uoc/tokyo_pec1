@@ -11,6 +11,9 @@
     display: grid;
     gap: $space-6;
     grid-template-columns: 1fr;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 
     @include mq($bp-md) { grid-template-columns: repeat(2, 1fr); }
     @include mq($bp-lg) { grid-template-columns: repeat(3, 1fr); }
