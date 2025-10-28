@@ -16,11 +16,15 @@
 
   text-align: center;
   padding-block: $space-12;
-
-  &__title { color: $color-surface; font-size: px-to-rem(22px); padding-bottom: 0; margin-bottom: $space-4; }
+  
+  &__title { color: $color-surface; 
+    font-size: px-to-rem(22px); 
+    padding-bottom: 0; 
+    margin-bottom: $space-4; }
 
   &__text {
     color: $color-surface;
+    padding: 12px;
   }
 
   &__button {

@@ -2,61 +2,140 @@
 @use "../tools/mixins" as *;
 
 .site-header {
+  background: #fff;
+  border-bottom: 1px solid $color-border;
   top: 0;
   z-index: $z-header;
-  background: $color-bg; 
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  border-bottom: 1px solid $color-border;
 
   &__nav {
-    @include container(1100px, $space-4);
+    @include container();
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 64px;
     gap: $space-4;
+    padding-block: $space-3;
+  }
+  
+   &__logo {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    color: $color-fg;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.125rem;
+
+    i { color: $color-accent; font-size: 1.25rem; }
   }
 
-  &__brand {
-    font-family: $font-base;
-    font-weight: 800;
-    letter-spacing: .3px;
+  &__toggle {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    clip: rect(0,0,0,0);
+  }
+
+  /* Botón hamburguesa */
+  &__hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 42px;
+    block-size: 42px;
+    border-radius: 8px;
+    border: 1px solid $color-border;
+    background: #fff;
     color: $color-fg;
-    font-size: 1rem;
-    
-    i {
-      font-size: 1.5rem;
-      color: $color-accent; 
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease;
+
+    .icon--close { display: none; }
+    &:hover { background: $color-surface; }
+  }
+
+/* Menú: en móvil es desplegable */
+  &__menu {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    z-index: $z-header;
+
+    background: #fff;
+    border-bottom: 1px solid $color-border;
+    box-shadow: 0 8px 18px rgba(0,0,0,.06);
+
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height .25s ease, opacity .2s ease, visibility .2s linear;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li { border-top: 1px solid $color-border; }
+    li:first-child { border-top: none; }
+
+    a {
+      display: block;
+      padding: $space-3 $space-4;
+      color: $color-fg;
+      text-decoration: none;
+
+      &:hover { background: $color-surface; }
     }
   }
 
-  &__menu {
-    display: flex;
-    align-items: center;
-    gap: $space-4;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  &__toggle:checked + &__hamburger {
+    border-color: $color-accent;
+    .icon--open { display: none; }
+    .icon--close { display: inline-block; }
+  }
 
-    a {
-      color: $color-fg;
-      text-decoration: none;
-      font-weight: 600;
-      padding: $space-2 $space-3;
-      border-radius: 8px;
-      transition: color .2s ease, background .2s ease;
+  &__toggle:checked ~ &__menu {
+    max-height: 80vh; 
+    visibility: visible;
+    opacity: 1;
+  }
 
-      &:hover,
-      &:focus-visible {
-        color: $color-accent;
-        background: #fff0f2;
-        outline: none;
+/* Escritorio: menú en línea, sin hamburguesa */
+  @include mq($bp-md) {
+  .site-header {
+    &__hamburger { display: none !important; }
+    &__toggle { display: none !important; } /* oculta el checkbox */
+
+    &__menu {
+      position: static !important;
+      display: flex !important;
+      align-items: center;
+      gap: $space-3;
+      /* Anula por si acaso cualquier colapso de móvil */
+      max-height: none !important;
+      height: auto !important;
+      overflow: visible !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
+
+      li { border: 0 !important; }
+
+      a {
+        padding: $space-2 $space-3;
+        border-radius: 999px;
+        white-space: nowrap;
+
+        &:hover { background: #f7efef;; color: $color-accent;}
       }
     }
   }
-
-  @include mq($bp-sm) {
-    &__menu { gap: $space-6; }
-  }
+}
 }
