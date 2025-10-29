@@ -13,11 +13,11 @@
 
   &__list {
     display: grid;
-    gap: $space-4;
     grid-template-columns: 1fr;
-    list-style: none;
+    gap: $space-4;
     padding: 0;
     margin: 0;
+    list-style: none;
 
     @include mq($bp-md) { grid-template-columns: repeat(2, 1fr); }
   }
@@ -25,19 +25,19 @@
   &__item {
     position: relative;
     padding: $space-4 $space-4 $space-4 $space-8;
+    color: $color-fg;
+    background: #fff;
     border: 1px solid $color-border;
     border-radius: 12px;
-    background: #fff;
-    color: $color-fg;
 
 
     &::before {
       position: absolute;
-      left: $space-3;
       top: $space-4 + 2px;
-      font: var(--fa-font-solid);
-      content: "\f00c"; 
+      left: $space-3;
+      font: var(--fa-font-solid); 
       color: $color-accent;
+      content: "\f00c";
     }
 
     strong { color: $color-fg; }

@@ -5,19 +5,19 @@
 .hero {
   @include full-bleed;
   position: relative;
-  isolation: isolate;
 
   background-image:
     linear-gradient(0deg, rgba(35, 34, 34, 0.48), rgba(78, 78, 78, 0.48)), 
     url("../images/hero.jpg");
-  background-size: cover;
-  background-position: center center;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  isolation: isolate;
 
   &__inner {
     @include container();
-    text-align: center;
-    padding-block: $space-12; 
+    padding-block: $space-12;
+    text-align: center; 
 
     @include mq($bp-md) { padding-block: $space-16; } 
     @include mq($bp-lg) { padding-block: $space-20; }
@@ -28,8 +28,8 @@
   }
 
   &__subtitle {
-    color: $color-surface;
     font-size: $font-size-subtitle;
+    color: $color-surface;
 
   }
 

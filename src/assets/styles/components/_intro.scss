@@ -9,8 +9,8 @@
 
   &__inner {
     @include container();
-    padding-block: $space-12;
     max-width: 80ch;
+    padding-block: $space-12;
     text-align: center;
   }
 

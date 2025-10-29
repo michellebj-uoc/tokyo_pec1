@@ -5,26 +5,26 @@
 .cta {
   @include full-bleed;
   position: relative;
-  isolation: isolate;
+  padding-block: $space-12;
+
+  text-align: center;
 
   background-image:
     linear-gradient(0deg, rgba(35, 34, 34, 0.48), rgba(78, 78, 78, 0.48)), 
     url("../images/cta.jpg");
-  background-size: cover;
-  background-position: center center;
   background-repeat: no-repeat;
-
-  text-align: center;
-  padding-block: $space-12;
+  background-position: center center;
+  background-size: cover;
+  isolation: isolate;
   
-  &__title { color: $color-surface; 
-    font-size: px-to-rem(22px); 
+  &__title { 
     padding-bottom: 0; 
-    margin-bottom: $space-4; }
+    margin-bottom: $space-4; 
+    font-size: px-to-rem(22px); color: $color-surface; }
 
   &__text {
-    color: $color-surface;
     padding: 12px;
+    color: $color-surface;
   }
 
   &__button {

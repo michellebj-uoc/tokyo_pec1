@@ -2,42 +2,43 @@
 @use "../tools/mixins" as *;
 
 .site-header {
-  background: #fff;
-  border-bottom: 1px solid $color-border;
   top: 0;
   z-index: $z-header;
+  background: #fff;
+  border-bottom: 1px solid $color-border;
 
   &__nav {
     @include container();
     position: relative;
     display: flex;
+    gap: $space-4;
     align-items: center;
     justify-content: space-between;
-    gap: $space-4;
     padding-block: $space-3;
   }
   
    &__logo {
     display: flex;
-    align-items: center;
     gap: $space-2;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: 700;
     color: $color-fg;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.125rem;
 
-    i { color: $color-accent; font-size: 1.25rem; }
+    i { font-size: 1.25rem; color: $color-accent; }
   }
 
   &__toggle {
     position: absolute;
     inline-size: 1px;
     block-size: 1px;
-    margin: -1px;
     padding: 0;
-    opacity: 0;
-    pointer-events: none;
-    clip: rect(0,0,0,0);
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip-path: inset(50%);
   }
 
   /* Botón hamburguesa */
@@ -47,12 +48,12 @@
     justify-content: center;
     inline-size: 42px;
     block-size: 42px;
-    border-radius: 8px;
-    border: 1px solid $color-border;
-    background: #fff;
     color: $color-fg;
     cursor: pointer;
-    transition: background .2s ease, border-color .2s ease;
+    background: #fff;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    transition: background 0.2s ease, border-color 0.2s ease;
 
     .icon--close { display: none; }
     &:hover { background: $color-surface; }
@@ -62,23 +63,23 @@
   &__menu {
     position: absolute;
     top: calc(100% + 1px);
-    left: 0;
     right: 0;
+    left: 0;
     z-index: $z-header;
+    visibility: hidden;
+
+    max-height: 0;
+    padding: 0;
+
+    margin: 0;
+    overflow: hidden;
+    list-style: none;
 
     background: #fff;
     border-bottom: 1px solid $color-border;
-    box-shadow: 0 8px 18px rgba(0,0,0,.06);
-
-    max-height: 0;
-    overflow: hidden;
-    visibility: hidden;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
     opacity: 0;
-    transition: max-height .25s ease, opacity .2s ease, visibility .2s linear;
-
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    transition: max-height 0.25s ease, opacity 0.2s ease, visibility 0.2s linear;
 
     li { border-top: 1px solid $color-border; }
     li:first-child { border-top: none; }
@@ -99,9 +100,9 @@
     .icon--close { display: inline-block; }
   }
 
-  &__toggle:checked ~ &__menu {
-    max-height: 80vh; 
+  &__toggle:checked ~ &__menu { 
     visibility: visible;
+    max-height: 80vh;
     opacity: 1;
   }
 
@@ -114,26 +115,26 @@
     &__menu {
       position: static !important;
       display: flex !important;
-      align-items: center;
+      visibility: visible !important;
       gap: $space-3;
+      align-items: center;
+      height: auto !important;
       /* Anula por si acaso cualquier colapso de móvil */
       max-height: none !important;
-      height: auto !important;
       overflow: visible !important;
-      visibility: visible !important;
-      opacity: 1 !important;
+      background: transparent !important;
       border: 0 !important;
       box-shadow: none !important;
-      background: transparent !important;
+      opacity: 1 !important;
 
       li { border: 0 !important; }
 
       a {
         padding: $space-2 $space-3;
-        border-radius: 999px;
         white-space: nowrap;
+        border-radius: 999px;
 
-        &:hover { background: #f7efef;; color: $color-accent;}
+        &:hover {color: $color-accent; background: #f7efef;}
       }
     }
   }
