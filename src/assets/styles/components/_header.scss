@@ -1,5 +1,9 @@
 @use "../variables" as *;
 @use "../tools/mixins" as *;
+@use "../utilities/utilities" as *;
+@use "../elements/elements" as *;
+
+.no-scroll { overflow: hidden; }
 
 .site-header {
   top: 0;
@@ -29,18 +33,6 @@
     i { font-size: 1.25rem; color: $color-accent; }
   }
 
-  &__toggle {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 0;
-    clip-path: inset(50%);
-  }
-
   /* Botón hamburguesa */
   &__hamburger {
     display: inline-flex;
@@ -59,6 +51,17 @@
     &:hover { background: $color-surface; }
   }
 
+  &[aria-expanded="true"] {
+      border-color: $color-accent;
+      .icon--open { display: none; }
+      .icon--close { display: inline-block; }
+  }
+
+  &__menu[hidden] {
+    display: none;
+  }
+
+
 /* Menú: en móvil es desplegable */
   &__menu {
     position: absolute;
@@ -66,20 +69,26 @@
     right: 0;
     left: 0;
     z-index: $z-header;
-    visibility: hidden;
-
-    max-height: 0;
-    padding: 0;
-
     margin: 0;
-    overflow: hidden;
+    padding: 0;
     list-style: none;
 
     background: #fff;
     border-bottom: 1px solid $color-border;
     box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+
     opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    visibility: hidden;
     transition: max-height 0.25s ease, opacity 0.2s ease, visibility 0.2s linear;
+
+    &.is-open {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+      visibility: visible;
+    }
 
     li { border-top: 1px solid $color-border; }
     li:first-child { border-top: none; }
@@ -94,23 +103,10 @@
     }
   }
 
-  &__toggle:checked + &__hamburger {
-    border-color: $color-accent;
-    .icon--open { display: none; }
-    .icon--close { display: inline-block; }
-  }
-
-  &__toggle:checked ~ &__menu { 
-    visibility: visible;
-    max-height: 80vh;
-    opacity: 1;
-  }
-
 /* Escritorio: menú en línea, sin hamburguesa */
   @include mq($bp-md) {
   .site-header {
     &__hamburger { display: none !important; }
-    &__toggle { display: none !important; } /* oculta el checkbox */
 
     &__menu {
       position: static !important;
@@ -118,14 +114,12 @@
       visibility: visible !important;
       gap: $space-3;
       align-items: center;
-      height: auto !important;
-      /* Anula por si acaso cualquier colapso de móvil */
-      max-height: none !important;
-      overflow: visible !important;
       background: transparent !important;
       border: 0 !important;
       box-shadow: none !important;
       opacity: 1 !important;
+      transform: none !important;
+      pointer-events: auto !important;
 
       li { border: 0 !important; }
 

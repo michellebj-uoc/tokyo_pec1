@@ -4,15 +4,19 @@
       <span class="site-header__brand"><i class="fa-solid fa-torii-gate"></i>Tokyo72h</span>
     </a>
 
-  <input type="checkbox" id="nav-toggle" class="site-header__toggle" aria-hidden="true" />
-
-  <label for="nav-toggle" class="site-header__hamburger" role="button" aria-controls="primary-menu" aria-expanded="false">
-      <span class="sr-only">Abrir/cerrar menú</span>
+      <button
+      class="site-header__hamburger"
+      id="menu-button"
+      aria-controls="primary-menu"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+      type="button"
+      tabindex="0">
       <i class="fa-solid fa-bars icon--open" aria-hidden="true"></i>
       <i class="fa-solid fa-xmark icon--close" aria-hidden="true"></i>
-    </label>
+    </button>
 
-    <ul id="primary-menu" class="site-header__menu">
+    <ul id="primary-menu" class="site-header__menu" hidden>
       <li><a href="#que-ver">Qué ver</a></li>
       <li><a href="#gastronomia">Gastronomía</a></li>
       <li><a href="#itinerario">Itinerario</a></li>
