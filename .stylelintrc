@@ -12,7 +12,7 @@
     "@stylistic/color-hex-case": "lower",
     "@stylistic/number-leading-zero": "always",
 
-    "max-nesting-depth": 5,
+    "max-nesting-depth": 3,
     "declaration-no-important": null,
     "no-descending-specificity": null,
     "selector-class-pattern": "^([a-z0-9]+(?:-[a-z0-9]+)*)?(?:__([a-z0-9]+(?:-[a-z0-9]+)*))?(?:--([a-z0-9]+(?:-[a-z0-9]+)*)){0,2}$",

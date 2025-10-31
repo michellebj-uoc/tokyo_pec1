@@ -14,25 +14,25 @@ $color-border: #e5e7eb;
 // Tipografía
 $font-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji","Segoe UI Emoji";
 $font-heading: "Kaisei Tokumin", "Hiragino Mincho ProN", "Yu Mincho", serif;
-$font-size-base: 16px;
-$font-size-title: 36px;
-$font-size-title2: 28px;
-$font-size-title3: 20px;
-$font-size-subtitle: 18px;
+$font-size-base: px-to-rem(16px);
+$font-size-title: px-to-rem(36px);
+$font-size-title2: px-to-rem(28px);
+$font-size-title3: px-to-rem(20px);
+$font-size-subtitle: px-to-rem(18px);
 $line-height-base: 1.6;
 
 // Espaciados
-$space-1: 4px;
-$space-2: 8px;
-$space-3: 12px; 
-$space-4: 16px;
-$space-5: 20px; 
-$space-6: 24px;
-$space-8: 32px;
-$space-10: 40px; 
-$space-12: 48px;
-$space-16: 64px;
-$space-20: 80px;
+$space-1: px-to-rem(4px);
+$space-2: px-to-rem(8px);
+$space-3: px-to-rem(12px); 
+$space-4: px-to-rem(16px);
+$space-5: px-to-rem(20px); 
+$space-6: px-to-rem(24px);
+$space-8: px-to-rem(32px);
+$space-10: px-to-rem(40px); 
+$space-12: px-to-rem(48px);
+$space-16: px-to-rem(64px);
+$space-20: px-to-rem(80px);
 
 // Breakpoints (mobile-first)
 $bp-sm: 576px;

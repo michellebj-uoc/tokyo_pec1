@@ -118,10 +118,11 @@
       box-shadow: none !important;
       opacity: 1 !important;
       transform: none !important;
+    }
+  }
+    .site-header__menu li { border: 0 !important; }
 
-      li { border: 0 !important; }
-
-      a {
+    .site-header__menu a {
         padding: $space-2 $space-3;
         white-space: nowrap;
         border-radius: 999px;
@@ -130,5 +131,5 @@
       }
     }
   }
-}
-}
+
+
